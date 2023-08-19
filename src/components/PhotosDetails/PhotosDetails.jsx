@@ -25,21 +25,21 @@ const PhotosDetails = () => {
   }, []);
 
   return (
-    <div className=" w-[100vw] h-[90vh] bg-[#042e5e] pl-10 pr-10 flex justify-center">
+    <div className=" w-[100vw] min-h-[90vh] bg-[#042e5e] pl-10 pr-10 flex justify-center items-center ">
       {isLoading ? (
         <img className="w-[300px] h-[300px]" src="https://flyclipart.com/thumb2/transparent-dancing-gif-tumblr-688390.png" alt="" />
       ) : (
-        <div className="w-full h-full flex flex-col md:flex-row pt-6 items-center  justify-around bg-[#042e5e] gap-10">
-          <div className="w-[400px] h-[400px] rounded-lg overflow-hidden shadow-[0px_3px_10px_rgb(,159,169,0.2)]">
+        <div className="w-full h-full flex flex-col lg:flex-row gap-3 sm:gap-10 pt-6 items-center justify-center bg-[#042e5e] ">
+          <div className=" w-[full] h-[full] sm:w-[40%] sm:h-[40%] rounded-lg overflow-hidden shadow-[0px_3px_10px_rgb(,159,169,0.2)] flex-shrink-0">
             <img
-              className="w-full h-full object-fill"
+              className="w-full h-full object-fill "
               src={photos.url}
               alt=""
             />
           </div>
-          <div className="flex flex-col items-center gap-8 text-center p-4">
-            <div className="text-4xl text-white font-bold">{photos.title}</div>
-            <div className="text-2xl text-white">{photos.desc}</div>
+          <div className="flex flex-col items-center gap-3 sm:gap-8 text-center p-4 max-w-[700px] flex-shrink">
+            <div className="text-2xl sm:text-4xl text-white font-bold border-b-2 border-white p-2 rounded-sm">{photos.title}</div>
+            <div className="text-xl sm:text-2xl text-white">{photos.desc}</div>
           </div>
         </div>
       )}
